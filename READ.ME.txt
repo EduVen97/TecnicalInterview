@@ -1,0 +1,3 @@
+Esto es una recreacion del ejercicio de Python que hice en la Entrevista tecnica de Code Crafters/Fino Company Venezuela.C.A.
+No me acuerdo bien de la cuarta pregunta, y me di cuenta que me complique la vida al no verificar el modulo CAT del cual se 
+generaban los objetos para obtener las variables necesarias. 
