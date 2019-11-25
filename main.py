@@ -1,14 +1,14 @@
 #Clase main del code test de la entrevista.
 #Me di cuenta que me complique en la 3era pregunta al no revisar la clase CAT y ver que parametros recibia el objeto
 #Ademas me deje intimidar por la list de objetos.
-#Una fiesta de gatos 
+#Una fiesta de gatos
 
 from cat import CAT,Ball
 
 ListOfCats = []
 ListOfBalls = []
 def main():
-     
+
     #Llenando las dos listas
     ListOfCats.append(CAT("Garfield",20))
     ListOfCats.append(CAT("Pelusa",9))
@@ -26,7 +26,7 @@ def main():
     ListOfBalls.append(Ball(True,1))
     ListOfBalls.append(Ball(False,9))
     ListOfBalls.append(Ball(True,2))
-    
+
     InviteYourself()
     GatosInvitados()
     NumerodeBolasGatos()
@@ -34,13 +34,20 @@ def main():
     print(exitResult,"gatos han salido de la fiesta")
 
 
-#Invitate a la fiesta 
+#Invitate a la fiesta
 def InviteYourself():
+    # Acá esta incorrecto ya que lo ideal es incluirte dentro del Array de los Gatos.
+    # Código original:
+    # print("Eduardo ha sido Invitado")
     print("Eduardo ha sido Invitado")
-    return 
+    return
 
 #Cuenta el numero de gatos invitados a la fiesta
 def GatosInvitados():
+    # Éste no está incorrecto del todo; es otra forma de hacerlo, sin embargo, tu primer intento fué más optimo.0
+    # Código original.
+    # NumberOfCats = len(self.catsInSleepover)
+    # print("Hay un total de:",NumberOfCats,"en la fiesta")
     Resultado=0
     for x in ListOfCats:
         Resultado+=1
@@ -49,10 +56,13 @@ def GatosInvitados():
 
 #Cuenta el numero de bolas con las cuales puede jugar cada gato
 #Los gatos no pueden jugar con bolas mayores a su peso,
-#Los gatos de 20kg o mas no juegas con bolas usadas. 
+#Los gatos de 20kg o mas no juegas con bolas usadas.
 def NumerodeBolasGatos():
+    # Acá mezclaste los métodos 3 y 4 de la prueba original.
+    # En tu primer intento, a pesar de que el algoritmo iba por buen curso, el resultado no se
+    # culminó correctamente. La idea la entendemos pero no dió el resultado esperado.
     for SelectedCat in ListOfCats:
-        BallsToPlay=0 #Numero de bolas con las cuales puede jugar el gato 
+        BallsToPlay=0 #Numero de bolas con las cuales puede jugar el gato
         for SelectedBall in ListOfBalls:
 
             if ((SelectedBall.NewOrUsed == True) and (SelectedCat.Weight>=20)): #Si la bola es nueva y el gato pesa mas de 20kg
@@ -71,9 +81,10 @@ def NumerodeBolasGatos():
 #CatExit
 #Si hay gatos que tienen 4 o menos bolas con las cual jugar estos salen de la fiesta
 def CatExit():
+    # En el código de la prueba para el 4to método estab vacío.
     GatosSaliendo = 0
     for SelectedCat in ListOfCats:
-        BallsToPlay=0 #Numero de bolas con las cuales puede jugar el gato 
+        BallsToPlay=0 #Numero de bolas con las cuales puede jugar el gato
         for SelectedBall in ListOfBalls:
 
             if ((SelectedBall.NewOrUsed == True) and (SelectedCat.Weight>=20)): #Si la bola es nueva y el gato pesa mas de 20kg
@@ -86,8 +97,7 @@ def CatExit():
 
         if (BallsToPlay<=4):
             GatosSaliendo+=1
-            
+
     return GatosSaliendo
 if __name__ == "__main__":
     main()
-    
